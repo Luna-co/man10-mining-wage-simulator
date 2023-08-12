@@ -129,13 +129,14 @@
       }
       for (const rank of ranks) {
         const jewel = data.石採掘数 * rank.期待値 | 0
+        const cobblestone = data.丸石 * getPrice(prices, '丸石') | 0
         const gold = data.金原石ブロック * getPrice(prices, '金原石ブロック') | 0
         const coal = data.石炭ブロック * getPrice(prices, '石炭ブロック') | 0
         const copper = data.銅原石ブロック * getPrice(prices, '銅原石ブロック') | 0
         const emerald = data.エメラルド * getPrice(prices, 'エメラルド') | 0
         const iron = data.鉄原石ブロック * getPrice(prices, '鉄原石ブロック') | 0
         const cost = data.消費耐久 / 14 * getPrice(prices, 'エンチャントのビン') | 0 + 2000
-        calcResult.wages.push(jewel + gold + coal + copper + emerald + iron - cost)
+        calcResult.wages.push(jewel + cobblestone + gold + coal + copper + emerald + iron - cost)
       }
       calcResults.push(calcResult)
     }
