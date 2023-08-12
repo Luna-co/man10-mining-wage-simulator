@@ -1,0 +1,4 @@
+td:first-child {
+  white-space: nowrap;
+  word-break: keep-all;
+}
